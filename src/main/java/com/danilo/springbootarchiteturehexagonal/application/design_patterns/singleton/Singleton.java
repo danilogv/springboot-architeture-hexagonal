@@ -21,21 +21,6 @@ public class Singleton {
     @Getter
     private static final ErrorDTO error = new ErrorDTO();
 
-    @Getter
-    private static final InsertProductUseCase insertProductUseCase = new InsertProductUseCase();
-
-    @Getter
-    private static final ChangeProductUseCase changeProductUseCase = new ChangeProductUseCase();
-
-    @Getter
-    private static final RemoveProductUseCase removeProductUseCase = new RemoveProductUseCase();
-
-    @Getter
-    private static final SearchOneProductUseCase searchOneProductUseCase = new SearchOneProductUseCase();
-
-    @Getter
-    private static final SearchAllProductsUseCase searchAllProductsUseCase = new SearchAllProductsUseCase();
-
     public static void resetProduct() {
         product = new Product();
     }
