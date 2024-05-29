@@ -1,12 +1,7 @@
 package com.danilo.springbootarchiteturehexagonal.adapter.controller;
 
+import com.danilo.springbootarchiteturehexagonal.application.design_patterns.facade.FacadeProductUseCase;
 import com.danilo.springbootarchiteturehexagonal.application.dto.ProductDTO;
-import com.danilo.springbootarchiteturehexagonal.application.usecase.ChangeProductUseCase;
-import com.danilo.springbootarchiteturehexagonal.application.usecase.InsertProductUseCase;
-import com.danilo.springbootarchiteturehexagonal.application.usecase.RemoveProductUseCase;
-import com.danilo.springbootarchiteturehexagonal.application.usecase.SearchAllProductsUseCase;
-import com.danilo.springbootarchiteturehexagonal.application.usecase.SearchOneProductUseCase;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,22 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/product")
-public class ProductController {
-
-    @Autowired
-    private InsertProductUseCase insertProductUseCase;
-
-    @Autowired
-    private ChangeProductUseCase changeProductUseCase;
-
-    @Autowired
-    private RemoveProductUseCase removeProductUseCase;
-
-    @Autowired
-    private SearchOneProductUseCase searchOneProductUseCase;
-
-    @Autowired
-    private SearchAllProductsUseCase searchAllProductsUseCase;
+public class ProductController extends FacadeProductUseCase {
 
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody ProductDTO product) {
